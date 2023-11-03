@@ -1,4 +1,4 @@
-package uw.michgu;
+package chatbot;
 
 
 public class Patient {

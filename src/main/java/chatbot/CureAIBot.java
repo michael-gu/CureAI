@@ -1,4 +1,4 @@
-package uw.michgu;
+package chatbot;
 
 import okhttp3.*;
 import org.json.simple.JSONArray;
