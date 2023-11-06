@@ -1,1 +1,1 @@
-web: java -jar cure-ai-api.jar
+web java -jar cure-ai-api.jar
