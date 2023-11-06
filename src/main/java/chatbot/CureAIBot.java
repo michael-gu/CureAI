@@ -4,6 +4,8 @@ import okhttp3.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,12 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 import java.util.*;
 
+@SpringBootApplication
 @CrossOrigin(origins = "*")
 @RestController
 public class CureAIBot {
     private static final String API_KEY = "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";
     private static final String OPENAI_API_URL = "https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct/completions";
 
+    public static void main(String[] args) {
+        SpringApplication.run(CureAIBot.class, args);
+    }
     @GetMapping("/get-curie-response")
     private ResponseEntity<String> getCurieResponse(@RequestParam String input, @RequestParam int tokens) throws Exception {
         OkHttpClient client = new OkHttpClient();
