@@ -12,60 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
 public class CureAIBot {
     private static final String API_KEY = "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";
     private static final String OPENAI_API_URL = "https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct/completions";
-
-    private final String RESET = "\u001B[0m";
-    private final String RED = "\u001B[31m";
-    private final String CYAN = "\u001B[36m";
-    private final int RESPONSE_TIME_API = 10;
-
-
-//    public void startChat() throws Exception {
-//        Scanner chatInput = new Scanner(System.in);
-//
-//        System.out.println(CYAN + "INITIALIZING CUREAI VERSION 1.0.0..." + RESET);
-//
-//        System.out.println(CYAN + "CureAI: " + RESET + getChatResponse("Give me a three sentence welcome message to CureAI (a health/wellbeing AI service), where the helper's name (you) is Curie, in a professional manner.", true) + "\n");
-//        System.out.print("Enter 1 for a medical diagnosis or 2 for general assistance: ");
-//        String option = chatInput.nextLine();
-//
-//        if (option.equals("1")) {
-//            System.out.print("Please provide your name, age, and symptoms so I can better assist you: ");
-//            String input = chatInput.nextLine();
-//            List<String> temp = identifyPatientDetails(input);
-//            patient.setName(temp.get(0));
-//            patient.setAge(temp.get(1));
-//            patient.setSymptoms(temp.get(2));
-//        }
-//
-//        boolean active = true;
-//        while (active) {
-//            System.out.print("Send a message (type x to end session, g to get diagnosis, and p to show profile): ");
-//            String userInput = chatInput.nextLine();
-//
-//            if (userInput.equals("x")) {
-//                System.exit(0);
-//            } else if (userInput.equals("p")) {
-//                System.out.println("Patient Profile\n" + patient.toString());
-//            } else if (userInput.equals("g")) {
-//                String diagnosis = getDiagnosis(this.patient);
-//                this.patient.setDiagnosis(diagnosis);
-//                System.out.println(RED + "Diagnosis: " + diagnosis + RESET);
-//            } else if (userInput.length() < 2) {
-//                System.out.println(CYAN + "CureAI: " + RESET + "Invalid Inquiry");
-//            }else {
-//                String output = getChatResponse(userInput);
-//                System.out.println(CYAN + "CureAI: " + RESET + output);
-//            }
-//            System.out.println();
-//        }
-//    }
 
     @GetMapping("/get-curie-response")
     private ResponseEntity<String> getCurieResponse(@RequestParam String input, @RequestParam int tokens) throws Exception {
