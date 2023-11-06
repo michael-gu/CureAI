@@ -1,1 +1,1 @@
-web: java -jar CureAI:1.0-SNAPSHOT.jar
+web: java -jar cure-ai-api.jar
