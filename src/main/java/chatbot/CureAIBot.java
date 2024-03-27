@@ -19,7 +19,7 @@ import java.util.*;
 @CrossOrigin(origins = "*")
 @RestController
 public class CureAIBot {
-    private static final String API_KEY = "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";
+    private static final String API_KEY = "api_key_here";
     private static final String OPENAI_API_URL = "https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct/completions";
 
     public static void main(String[] args) {
